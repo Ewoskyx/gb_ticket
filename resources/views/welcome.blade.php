@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-  
+    <link href="{{ asset('css/panel.css') }}" rel="stylesheet">
+
     <title>GB ADMIN</title>
 </head>
 
@@ -16,50 +16,68 @@
             <ul>
                 <li>
                     <a href="#">
-                        <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                        <span class="icon">
+                            <ion-icon name="person-outline"></ion-icon>
+                        </span>
                         <span class="title">GB ADMIN</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
                         <span class="title">Panel</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
+                        <span class="icon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
                         <span class="title">Müşteriler</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                        <span class="icon">
+                            <ion-icon name="mail-outline"></ion-icon>
+                        </span>
                         <span class="title">Mesajlar</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <span class="icon"><ion-icon name="help-buoy-outline"></ion-icon></span>
+                        <span class="icon">
+                            <ion-icon name="help-buoy-outline"></ion-icon>
+                        </span>
                         <span class="title">Yardım</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                        <span class="icon">
+                            <ion-icon name="settings-outline"></ion-icon>
+                        </span>
                         <span class="title">Ayarlar</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                        <span class="icon">
+                            <ion-icon name="lock-closed-outline"></ion-icon>
+                        </span>
                         <span class="title">Parola</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <span class="icon"><ion-icon name="enter-outline"></ion-icon></span>
-                        <span class="title">Çıkış</span>
+                    <a href="{{ route('logout') }}">
+                        <span class="icon">
+                            <ion-icon name="enter-outline"></ion-icon>
+                        </span>
+                        <span class="title">
+                            Çıkış
+                        </span>
                     </a>
                 </li>
             </ul>
@@ -201,8 +219,9 @@
             </div>
         </div>
     </div>
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/panel.js') }}"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
+
 </html>
