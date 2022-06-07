@@ -30,7 +30,7 @@ body {
 
 .navigation {
     position: fixed;
-    width: 300px;
+    width: 250px;
     height: 100%;
     transition: all 0.3s ease-in-out;
     border-top-right-radius: 31px;
@@ -138,12 +138,11 @@ body {
     pointer-events: none;
 }
 
-
 /*MAIN*/
 .main {
     position: absolute;
     width: calc(100% - 300px);
-    left: 300px;
+    left: 250px;
     min-height: 100vh;
     background: var(--white);
     transition: 0.5s;
@@ -175,35 +174,6 @@ body {
     cursor: pointer;
 }
 
-.search {
-    position: relative;
-    width: 400px;
-    margin: 0 10px;
-}
-
-.search label {
-    position: relative;
-    width: 100%;
-}
-
-.search label input{
-    width: 100%;
-    height: 40px;
-    border-radius: 40px;
-    padding: 5px 20px;
-    padding-left: 35px;
-    font-size: 18px;
-    outline: none;
-    border: 1px solid var(--black2);
-}
-
-.search label ion-icon{
-    position: absolute;
-    top:0;
-    left: 10px;
-    font-size: 1.2em;
-}
-
 .user{
     position: relative;
     width: 40px;
@@ -229,7 +199,7 @@ body {
     width: 100%;
     padding: 20px;
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(5,1fr);
     grid-gap: 30px;
 }
 
@@ -281,16 +251,31 @@ body {
 }
 
 .card.inprog {
-    background: hsla(195, 86%, 50%, 1);
-    background: linear-gradient(90deg, hsla(195, 86%, 50%, 1) 0%, hsla(236, 93%, 65%, 1) 100%);
-    background: -moz-linear-gradient(90deg, hsla(195, 86%, 50%, 1) 0%, hsla(236, 93%, 65%, 1) 100%);
-    background: -webkit-linear-gradient(90deg, hsla(195, 86%, 50%, 1) 0%, hsla(236, 93%, 65%, 1) 100%);
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#12B3EB", endColorstr="#5460F9", GradientType=1 );
+    background: hsla(208, 33%, 21%, 1);
+    background: linear-gradient(90deg, hsla(208, 33%, 21%, 1) 0%, hsla(211, 36%, 46%, 1) 100%);
+    background: -moz-linear-gradient(90deg, hsla(208, 33%, 21%, 1) 0%, hsla(211, 36%, 46%, 1) 100%);
+    background: -webkit-linear-gradient(90deg, hsla(208, 33%, 21%, 1) 0%, hsla(211, 36%, 46%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#243748", endColorstr="#4B749F", GradientType=1 );
+}
+
+.card.closed {
+    background: hsla(356, 76%, 50%, 1);
+    background: linear-gradient(90deg, hsla(356, 76%, 50%, 1) 0%, hsla(14, 63%, 36%, 1) 100%);
+    background: -moz-linear-gradient(90deg, hsla(356, 76%, 50%, 1) 0%, hsla(14, 63%, 36%, 1) 100%);
+    background: -webkit-linear-gradient(90deg, hsla(356, 76%, 50%, 1) 0%, hsla(14, 63%, 36%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#E01F2D", endColorstr="#943C22", GradientType=1 );
 }
 
 .cardBox .card .iconBx {
     font-size: 3.5em;
-    columns: var(--black2);
+    color: var(--black1);
+}
+
+.cardBox a {
+   display: block;
+   width: 100%;
+   text-decoration: none;
+   color: var(--white); 
 }
 
 .cardBox .card:hover{
@@ -307,7 +292,7 @@ body {
 
 .details {
     position: relative;
-    width: 140%;
+    width: 152%;
     padding: 20px;
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -328,6 +313,36 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+}
+
+.search {
+    position: relative;
+    width: 300px;
+    margin: 0 10px;
+}
+
+.search label {
+    position: relative;
+    width: 100%;
+}
+
+.search label input{
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    font-size: 18px;
+    outline: none;
+    border: 1px solid var(--black2);
+}
+
+.search label ion-icon{
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 10px;
+    font-size: 18px;
 }
 
 .cardHeader h2 {
@@ -361,6 +376,9 @@ body {
     border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
+.odds{
+    background-color: rgb(203, 196, 196);
+}
 .details .recentOrders table tr:last-child {
     border-bottom: none;
 }
@@ -375,7 +393,7 @@ body {
 }
 
 .details .recentOrders table tr td:last-child {
-    text-align: center;
+    text-align: end;
 }
 .details .recentOrders table tr td:nth-child(1) {
     text-align: start;
@@ -413,15 +431,29 @@ body {
     font-weight: 500;
 }
 
-.status.inprogress{
+.status.in_progress{
     padding: 4px 6px;
-    background: hsla(195, 86%, 50%, 1);
-    background: linear-gradient(90deg, hsla(195, 86%, 50%, 1) 0%, hsla(236, 93%, 65%, 1) 100%);
-    background: -moz-linear-gradient(90deg, hsla(195, 86%, 50%, 1) 0%, hsla(236, 93%, 65%, 1) 100%);
-    background: -webkit-linear-gradient(90deg, hsla(195, 86%, 50%, 1) 0%, hsla(236, 93%, 65%, 1) 100%);
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#12B3EB", endColorstr="#5460F9", GradientType=1 );
+    background: hsla(208, 33%, 21%, 1);
+    background: linear-gradient(90deg, hsla(208, 33%, 21%, 1) 0%, hsla(211, 36%, 46%, 1) 100%);
+    background: -moz-linear-gradient(90deg, hsla(208, 33%, 21%, 1) 0%, hsla(211, 36%, 46%, 1) 100%);
+    background: -webkit-linear-gradient(90deg, hsla(208, 33%, 21%, 1) 0%, hsla(211, 36%, 46%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#243748", endColorstr="#4B749F", GradientType=1 );
     color: var(--white);
     border-radius: 4px;
     font-size: 14px;
     font-weight: 500;
 }
+
+.status.closed{
+    padding: 4px 6px;
+    background: hsla(356, 76%, 50%, 1);
+    background: linear-gradient(90deg, hsla(356, 76%, 50%, 1) 0%, hsla(14, 63%, 36%, 1) 100%);
+    background: -moz-linear-gradient(90deg, hsla(356, 76%, 50%, 1) 0%, hsla(14, 63%, 36%, 1) 100%);
+    background: -webkit-linear-gradient(90deg, hsla(356, 76%, 50%, 1) 0%, hsla(14, 63%, 36%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#E01F2D", endColorstr="#943C22", GradientType=1 );
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
