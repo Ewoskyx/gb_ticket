@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="{{ asset('css/panel.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/detail.css') }}" rel="stylesheet">
 
     <title>GB ADMIN</title>
 </head>
@@ -31,7 +32,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ route('all_tickets') }}">
                         <span class="icon">
                             <ion-icon name="people-outline"></ion-icon>
                         </span>
@@ -88,133 +89,80 @@
                 <div class="toggle">
                     <ion-icon name="menu-outline"></ion-icon>
                 </div>
-                <div class="search">
-                    <label>
-                        <input type="text" placeholder="Ara">
-                        <ion-icon name="search-circle-outline"></ion-icon>
-                    </label>
-                </div>
                 <div class="user">
-                    <img src="">
+                    <img src="{{ asset('images/image-1.png') }}">
                 </div>
             </div>
 
             <div class="cardBox">
-                <div class="card ticket-total">
-                    <div>
-                        <div class="numbers">1,292</div>
-                        <div class="cardName">Toplam Talep</div>
+                <a href="{{ route('all_tickets') }}">
+                    <div class="card ticket-total">
+                        <div>
+                            <div class="numbers">{{ $result->count() }}</div>
+                            <div class="cardName">Toplam</div>
+                        </div>
+                        <div class="iconBx">
+                            <ion-icon name="ticket-outline"></ion-icon>
+                        </div>
                     </div>
-                    <div class="iconBx">
-                        <ion-icon name="ticket-outline"></ion-icon>
+                </a>
+                <a href="{{ route('tickets_pending') }}">
+                    <div class="card pend">
+                        <div>
+                            <div class="numbers">{{ $result->where('status','pending')->count() }}</div>
+                            <div class="cardName">Bekliyor</div>
+                        </div>
+                        <div class="iconBx">
+                            <ion-icon name="bug-outline"></ion-icon>
+                        </div>
                     </div>
-                </div>
-                <div class="card pend">
-                    <div>
-                        <div class="numbers">280</div>
-                        <div class="cardName">Bekliyor</div>
+                </a>
+                <a href="{{ route('tickets_in_progress') }}">
+                    <div class="card inprog">
+                        <div>
+                            <div class="numbers">{{ $result->where('status','in_progress')->count() }}</div>
+                            <div class="cardName">Çalışılıyor</div>
+                        </div>
+                        <div class="iconBx">
+                            <ion-icon name="barbell-outline"></ion-icon>
+                        </div>
                     </div>
-                    <div class="iconBx">
-                        <ion-icon name="bug-outline"></ion-icon>
-                    </div>
-                </div>
-                <div class="card inprog">
-                    <div>
-                        <div class="numbers">80</div>
-                        <div class="cardName">Çalışılıyor</div>
-                    </div>
-                    <div class="iconBx">
-                        <ion-icon name="barbell-outline"></ion-icon>
-                    </div>
-                </div>
+                </a>
+                <a href="{{ route('tickets_resolved') }}">
                 <div class="card res">
                     <div>
-                        <div class="numbers">842</div>
+                        <div class="numbers">{{ $result->where('status','resolved')->count() }}</div>
                         <div class="cardName">Çözümlendi</div>
                     </div>
                     <div class="iconBx">
                         <ion-icon name="checkmark-done-outline"></ion-icon>
                     </div>
                 </div>
+                </a>
+                <a href="{{ route('tickets_closed') }}">
+                    <div class="card closed">
+                        <div>
+                            <div class="numbers">{{ $result->where('status','closed')->count() }}</div>
+                            <div class="cardName">Kapandı</div>
+                        </div>
+                        <div class="iconBx">
+                            <ion-icon name="close-outline"></ion-icon>
+                        </div>
+                    </div>
+                </a>
             </div>
             <div class="details">
                 <div class="recentOrders">
                     <div class="cardHeader">
                         <h2>Müşteri Talepleri</h2>
-                        <a href="#" class="btn">Tümünü Görüntüle</a>
+                        <div class="search">
+                            <label>
+                                <input type="text" placeholder="Ara">
+                                <ion-icon name="search-outline"></ion-icon>
+                            </label>
+                        </div>
                     </div>
-                    <table>
-                        <thead>
-                            <tr>
-                                <td>Kategori</td>
-                                <td>Talep</td>
-                                <td>Detay</td>
-                                <td>Durum</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Bug</td>
-                                <td>User Register is not working</td>
-                                <td>A new user can not register to the system</td>
-                                <td><span class="status inprogress">Çalışılıyor</span></td>
-                            </tr>
-                            <tr>
-                                <td>Feature</td>
-                                <td>We need better styles</td>
-                                <td>Better styles are needed for our main page</td>
-                                <td><span class="status resolved">Çözümlendi</span></td>
-                            </tr>
-                            <tr>
-                                <td>Bug</td>
-                                <td>User Register is not working</td>
-                                <td>A new user can not register to the system</td>
-                                <td><span class="status pending">Bekliyor</span></td>
-                            </tr>
-                            <tr>
-                                <td>Feature</td>
-                                <td>We need better styles</td>
-                                <td>Better styles are needed for our main page</td>
-                                <td><span class="status pending">Bekliyor</span></td>
-                            </tr>
-                            <tr>
-                                <td>Feature</td>
-                                <td>We need better styles</td>
-                                <td>Better styles are needed for our main page</td>
-                                <td><span class="status resolved">Çözümlendi</span></td>
-                            </tr>
-                            <tr>
-                                <td>Bug</td>
-                                <td>User Register is not working</td>
-                                <td>A new user can not register to the system</td>
-                                <td><span class="status inprogress">Çalışılıyor</span></td>
-                            </tr>
-                            <tr>
-                                <td>Feature</td>
-                                <td>We need better styles</td>
-                                <td>Better styles are needed for our main page</td>
-                                <td><span class="status resolved">Çözümlendi</span></td>
-                            </tr>
-                            <tr>
-                                <td>Bug</td>
-                                <td>User Register is not working</td>
-                                <td>A new user can not register to the system</td>
-                                <td><span class="status pending">Bekliyor</span></td>
-                            </tr>
-                            <tr>
-                                <td>Feature</td>
-                                <td>We need better styles</td>
-                                <td>Better styles are needed for our main page</td>
-                                <td><span class="status pending">Bekliyor</span></td>
-                            </tr>
-                            <tr>
-                                <td>Feature</td>
-                                <td>We need better styles</td>
-                                <td>Better styles are needed for our main page</td>
-                                <td><span class="status resolved">Çözümlendi</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    @yield('table')
                 </div>
             </div>
         </div>

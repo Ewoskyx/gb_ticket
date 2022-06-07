@@ -1,0 +1,124 @@
+.detail_wrapper.closed {
+    background: hsla(356, 76%, 50%, 1);
+    background: linear-gradient(90deg, hsla(356, 76%, 50%, 1) 0%, hsla(14, 63%, 36%, 1) 100%);
+    background: -moz-linear-gradient(90deg, hsla(356, 76%, 50%, 1) 0%, hsla(14, 63%, 36%, 1) 100%);
+    background: -webkit-linear-gradient(90deg, hsla(356, 76%, 50%, 1) 0%, hsla(14, 63%, 36%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#E01F2D", endColorstr="#943C22", GradientType=1 );
+    color: var(--white);
+}
+
+.box {
+    width: 330px;
+    position: absolute;
+    top:70%;
+    left:30%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+
+.box-form {
+    width: 320px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .box-login-tab {
+      width: 50%;
+      height: 40px;
+      background: #fdfdfd;
+      position: relative;
+      float: left;
+      z-index: 1;
+    
+    -webkit-border-radius: 6px 6px 0 0;
+       -moz-border-radius: 6px 6px 0 0;
+            border-radius: 6px 6px 0 0;
+    
+      -webkit-transform: perspective(5px) rotateX(0.93deg) translateZ(-1px);
+              transform: perspective(5px) rotateX(0.93deg) translateZ(-1px);
+      -webkit-transform-origin: 0 0;
+              transform-origin: 0 0;
+      -webkit-backface-visibility: hidden;
+              backface-visibility: hidden;
+      
+      -webkit-box-shadow: 15px -15px 30px rgba(0,0,0,0.32);
+       -moz-box-shadow: 15px -15px 30px rgba(0,0,0,0.32);
+            box-shadow: 15px -15px 30px rgba(0,0,0,0.32);
+  }
+  
+  .box-login-title {
+      width: 35%;
+      height: 40px;
+      position: absolute;
+      float: left;
+      z-index: 2;
+  }
+  
+  .box-login {
+    position: relative;
+    top: -4px;
+    width: 520px;
+    min-height: 600px;
+    background: #fdfdfd;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 2;
+    -webkit-border-top-right-radius: 6px;
+    -webkit-border-bottom-left-radius: 6px;
+    -webkit-border-bottom-right-radius: 6px;
+    -moz-border-radius-topright: 6px;
+    -moz-border-radius-bottomleft: 6px;
+    -moz-border-radius-bottomright: 6px;
+     border-top-right-radius: 6px;
+     border-bottom-left-radius: 6px;
+     border-bottom-right-radius: 6px;
+    
+    -webkit-box-shadow: 15px 30px 30px rgba(0,0,0,0.32);
+       -moz-box-shadow: 15px 30px 30px rgba(0,0,0,0.32);
+            box-shadow: 15px 30px 30px rgba(0,0,0,0.32);
+  }
+
+  .box-login textarea {
+    padding: 4px;
+    margin: 4px;
+    border-radius: 12px;
+    border: 2px #f0a500 dashed;
+    background-color: rgb(236, 223, 223);
+    font-size: 1.1em;
+    width: auto;
+    height: auto;
+    resize: none;
+}
+
+.box-login input {
+    padding: 4px;
+    margin: 8px;
+    border: 2px #f0a500 dashed;
+    background-color: rgb(236, 223, 223);
+    border-radius: 6px;
+    font-size: 1.1em;
+    width: auto;
+}
+
+.box-login label {
+    padding: 4px;
+    font-weight: 500;
+    font-size: 1.2em;
+}
+
+.box-btn {
+    align-self: flex-end;
+    margin-right: 24px;
+    width: 50px;
+    height: 32px;
+    background-color: #f0a500;
+    cursor: pointer;
+}
+
+.box-btn:hover {
+    background-color: rgb(236, 223, 223);
+    color: #f0a500;
+}

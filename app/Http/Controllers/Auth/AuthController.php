@@ -1,18 +1,19 @@
 <?php
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
+
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use Session;
-use Validator;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
     public function login()
     {
         if (Auth::check()) {
-            return redirect()->route('welcome');
+            return redirect()->route('all_tickets');
         }
         return view('auth.login');
     }
@@ -35,7 +36,7 @@ class AuthController extends Controller
  
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
-            return redirect()->route('welcome');
+            return redirect()->route('all_tickets');
         }
         return redirect()->route('login')->withError('Şifre yanlış!');
     }
