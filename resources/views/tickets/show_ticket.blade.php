@@ -1,7 +1,7 @@
 @extends('welcome')
 @section('table')
-    <div class='box'>
-        <div class='box-form'>
+    <div class='box' id="big-box">
+        <div class='box-form' draggable="true" id="box-form">
             <div class='box-login-tab'></div>
             <div class='box-login-title'>
                 <h2>{{ $ticket->ticket_no }}</h2>

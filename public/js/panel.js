@@ -2,6 +2,7 @@ let list = document.querySelectorAll('.navigation li');
 let toggle = document.querySelector('.toggle');
 let navigation = document.querySelector('.navigation');
 let main = document.querySelector('.main');
+let draggBox = document.querySelector('#box-form');
 
 function activeLink() {
     list.forEach((item) => item.classList.remove('hovered'));
@@ -13,3 +14,41 @@ function activeLink() {
       navigation.classList.toggle('active');
       main.classList.toggle('active');
   }
+
+
+//   DRAG & DROP
+  draggBox.onmousedown = function(event) {
+
+    let shiftX = event.clientX - draggBox.getBoundingClientRect().left;
+    let shiftY = event.clientY - draggBox.getBoundingClientRect().top;
+  
+    draggBox.style.position = 'absolute';
+    draggBox.style.zIndex = 1000;
+    document.body.append(draggBox);
+  
+    moveAt(event.pageX, event.pageY);
+  
+
+    function moveAt(pageX, pageY) {
+      draggBox.style.left = pageX - shiftX + 'px';
+      draggBox.style.top = pageY - shiftY + 'px';
+    }
+  
+    function onMouseMove(event) {
+      moveAt(event.pageX, event.pageY);
+    }
+  
+
+    document.addEventListener('mousemove', onMouseMove);
+  
+
+    draggBox.onmouseup = function() {
+      document.removeEventListener('mousemove', onMouseMove);
+      draggBox.onmouseup = null;
+    };
+  
+  };
+  
+  draggBox.ondragstart = function() {
+    return false;
+  };

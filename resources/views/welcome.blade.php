@@ -24,7 +24,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ route('stats') }}">
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
                         </span>
@@ -36,7 +36,7 @@
                         <span class="icon">
                             <ion-icon name="people-outline"></ion-icon>
                         </span>
-                        <span class="title">Müşteriler</span>
+                        <span class="title">Müşteri Talepleri</span>
                     </a>
                 </li>
                 <li>
@@ -94,63 +94,7 @@
                 </div>
             </div>
 
-            <div class="cardBox">
-                <a href="{{ route('all_tickets') }}">
-                    <div class="card ticket-total">
-                        <div>
-                            <div class="numbers">{{ $result->count() }}</div>
-                            <div class="cardName">Toplam</div>
-                        </div>
-                        <div class="iconBx">
-                            <ion-icon name="ticket-outline"></ion-icon>
-                        </div>
-                    </div>
-                </a>
-                <a href="{{ route('tickets_pending') }}">
-                    <div class="card pend">
-                        <div>
-                            <div class="numbers">{{ $result->where('status','pending')->count() }}</div>
-                            <div class="cardName">Bekliyor</div>
-                        </div>
-                        <div class="iconBx">
-                            <ion-icon name="bug-outline"></ion-icon>
-                        </div>
-                    </div>
-                </a>
-                <a href="{{ route('tickets_in_progress') }}">
-                    <div class="card inprog">
-                        <div>
-                            <div class="numbers">{{ $result->where('status','in_progress')->count() }}</div>
-                            <div class="cardName">Çalışılıyor</div>
-                        </div>
-                        <div class="iconBx">
-                            <ion-icon name="barbell-outline"></ion-icon>
-                        </div>
-                    </div>
-                </a>
-                <a href="{{ route('tickets_resolved') }}">
-                <div class="card res">
-                    <div>
-                        <div class="numbers">{{ $result->where('status','resolved')->count() }}</div>
-                        <div class="cardName">Çözümlendi</div>
-                    </div>
-                    <div class="iconBx">
-                        <ion-icon name="checkmark-done-outline"></ion-icon>
-                    </div>
-                </div>
-                </a>
-                <a href="{{ route('tickets_closed') }}">
-                    <div class="card closed">
-                        <div>
-                            <div class="numbers">{{ $result->where('status','closed')->count() }}</div>
-                            <div class="cardName">Kapandı</div>
-                        </div>
-                        <div class="iconBx">
-                            <ion-icon name="close-outline"></ion-icon>
-                        </div>
-                    </div>
-                </a>
-            </div>
+            {{-- @include('layouts.stat_cards') --}}
             <div class="details">
                 <div class="recentOrders">
                     <div class="cardHeader">
