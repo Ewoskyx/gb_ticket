@@ -359,6 +359,28 @@ body {
     border-radius: 6px;
 }
 
+/*Chart*/
+
+.graphBox {
+    position: relative;
+    width: 70%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr, 1fr;
+    grid-gap: 30px;
+    min-height: 200px;
+}
+
+
+.graphBox .box {
+    position: relative;
+    background-color: #222;
+    padding: 20px;
+    width: 100%;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.88);
+    border-radius: 20px;
+}
+
 /*Data Table*/
 .details table {
     width: 100%;
@@ -457,3 +479,15 @@ body {
     font-weight: 500;
 }
 
+.chart_box {
+    width: 85vw;
+
+}
+
+#box-form {
+    cursor: pointer;
+}
+
+.box-btn {
+    z-index: 1000;
+}

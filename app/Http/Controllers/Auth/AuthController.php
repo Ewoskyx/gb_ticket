@@ -13,7 +13,7 @@ class AuthController extends Controller
     public function login()
     {
         if (Auth::check()) {
-            return redirect()->route('all_tickets');
+            return redirect()->route('stats');
         }
         return view('auth.login');
     }
@@ -36,7 +36,7 @@ class AuthController extends Controller
  
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
-            return redirect()->route('all_tickets');
+            return redirect()->route('stats');
         }
         return redirect()->route('login')->withError('Şifre yanlış!');
     }

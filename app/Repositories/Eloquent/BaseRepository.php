@@ -1,7 +1,5 @@
 <?php 
-
 namespace App\Repositories\Eloquent;
-
 use App\Repositories\Contracts\IBase;
 use Exception;
 
@@ -64,6 +62,14 @@ abstract class BaseRepository implements IBase
     {
         $response= $this->model->where($column, 'like', '%'.$name.'%')->get();
         return  $response;
+    }
+
+    public function orderBy($name) {
+        return $this->model->orderBy($name);
+    }
+
+    public function get() {
+        return $this->model->get();
     }
 
     public function isModel($request):bool {

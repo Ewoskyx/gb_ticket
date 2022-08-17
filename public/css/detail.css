@@ -82,31 +82,40 @@
   }
 
   .box-login textarea {
-    padding: 4px;
-    margin: 4px;
-    border-radius: 12px;
-    border: 2px #f0a500 dashed;
-    background-color: rgb(236, 223, 223);
-    font-size: 1.1em;
-    width: auto;
+    border: none;
+    box-shadow: 0 0 3px #4791cc;
+    padding: 8px;
+    font-size: 1.3em;
+    text-indent: 8px;
+    margin-left: 12px;
+    width: 500px;
     height: auto;
     resize: none;
 }
 
 .box-login input {
-    padding: 4px;
-    margin: 8px;
-    border: 2px #f0a500 dashed;
-    background-color: rgb(236, 223, 223);
-    border-radius: 6px;
-    font-size: 1.1em;
-    width: auto;
+    border: none;
+    box-shadow: 0 0 3px #4791cc;
+    padding: 8px;
+    font-size: 1.3em;
+    text-indent: 8px;
+    margin-left: 12px;
 }
 
 .box-login label {
     padding: 4px;
     font-weight: 500;
     font-size: 1.2em;
+}
+
+.box-login select {
+  border: none;
+  box-shadow: 0 0 3px #4791cc;
+  padding: 8px;
+  font-size: 1.3em;
+  text-indent: 8px;
+  margin-left: 12px;
+  width: 200px;
 }
 
 .box-btn {

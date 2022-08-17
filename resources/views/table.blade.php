@@ -4,7 +4,7 @@
     <table>
         <thead>
             <tr>
-                <td><a href="{{ route('sort_by_ticket_no') }}">Talep No</a></td>
+                <td><a href="{{ route('sort_by_ticket_no', ['params' => $data]) }}">Talep No</a></td>
                 <td><a href="{{ route('sort_by_severity') }}">Önem Kodu</a></td>
                 <td><a href="{{ route('sort_by_category') }}">Kategori</a></td>
                 <td>Talep</td>
@@ -23,7 +23,7 @@
                         <td>{{ $ticket->severity ?? 'N/A' }}</td>
                         <td>{{ $ticket->category ?? 'N/A' }}</td>
                         <td>{{ $ticket->title ?? 'N/A' }}</td>
-                        <td>{{ $ticket->description ?? 'N/A' }}</td>
+                        <td>{{ Str::limit($ticket->description, 30)  ?? 'N/A' }}</td>
                         <td><span class="status {{ $ticket->status }}">{{ $ticket->status ?? 'N/A' }}</span></td>
                         <td>{{ $ticket->assignee ?? 'N/A' }}</td>
                     </tr>
@@ -35,7 +35,7 @@
                         <td>{{ $ticket->severity ?? 'N/A' }}</td>
                         <td>{{ $ticket->category ?? 'N/A' }}</td>
                         <td>{{ $ticket->title ?? 'N/A' }}</td>
-                        <td>{{ $ticket->description ?? 'N/A' }}</td>
+                        <td>{{ Str::limit($ticket->description, 30)  ?? 'N/A' }}</td>
                         <td><span class="status {{ $ticket->status }}">{{ $ticket->status ?? 'N/A' }}</span></td>
                         <td>{{ $ticket->assignee ?? 'N/A' }}</td>
                     </tr>

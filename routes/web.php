@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Panel\PanelController;
 use App\Http\Controllers\Ticket\SortController;
 use App\Http\Controllers\Ticket\TicketController;
 
@@ -16,14 +17,22 @@ Route::controller(AuthController::class)->group(function(){
 
 
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {
+
+    Route::get('/', function () {
+        return view('layouts.app');
+    });
+
+    Route::get('stats',[PanelController::class,'stats'])->name('stats');
         
     Route::controller(TicketController::class)->group(function(){
-        Route::get('/','getAllTickets')->name('all_tickets');
+        Route::get('all_tickets','getAllTickets')->name('all_tickets');
         Route::get('show_ticket/{id}','showTicket')->name('show_ticket');
+        Route::post('edit_ticket/{id?}','editTicket')->name('edit_ticket');
         Route::get('tickets_in_progress','getTicketsInProgress')->name('tickets_in_progress');
         Route::get('tickets_pending','getTicketsPending')->name('tickets_pending');
         Route::get('tickets_closed','getTicketsClosed')->name('tickets_closed');
         Route::get('tickets_resolved','getTicketsResolved')->name('tickets_resolved');
+        Route::get('search/{query?}','searchTicket')->name('search');
     });
 
     Route::controller(SortController::class)->group(function(){
