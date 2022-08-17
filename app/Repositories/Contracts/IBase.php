@@ -12,4 +12,6 @@ interface IBase {
     public function update($id, array $data);
     public function delete($id);
     public function searchByName($column, $name); 
+    public function orderBy($name);
+    public function get();
 }

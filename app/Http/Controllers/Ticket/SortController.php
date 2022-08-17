@@ -14,8 +14,9 @@ class SortController extends Controller
         $this->tickets = $tickets;
     }
 
-    public function sortByTicketNo() {
-        $tickets = $this->tickets->all()->sortBy('ticket_no');
+    public function sortByTicketNo($params) {
+       dd($params);
+        $tickets = $this->tickets->all()->where('status', '=', $params)->sortBy('ticket_no');
         return view('tickets.sort_by_ticket_no',['tickets'=> $tickets]);
     }
     public function sortBySeverity() {

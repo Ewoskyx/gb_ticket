@@ -487,3 +487,7 @@ body {
 #box-form {
     cursor: pointer;
 }
+
+.box-btn {
+    z-index: 1000;
+}

@@ -95,7 +95,7 @@
             </div>
 
             @include('layouts.stat_cards')
-          
+            
         </div>
     </div>
     <script src="{{ asset('js/panel.js') }}"></script>

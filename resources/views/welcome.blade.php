@@ -96,7 +96,7 @@
 
             {{-- @include('layouts.stat_cards') --}}
             <div class="details">
-                <div class="recentOrders">
+                <div class="recentOrders" id="panel-body">
                     <div class="cardHeader">
                         <h2>Müşteri Talepleri</h2>
                         <div class="search">

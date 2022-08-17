@@ -27,6 +27,7 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     Route::controller(TicketController::class)->group(function(){
         Route::get('all_tickets','getAllTickets')->name('all_tickets');
         Route::get('show_ticket/{id}','showTicket')->name('show_ticket');
+        Route::post('edit_ticket/{id?}','editTicket')->name('edit_ticket');
         Route::get('tickets_in_progress','getTicketsInProgress')->name('tickets_in_progress');
         Route::get('tickets_pending','getTicketsPending')->name('tickets_pending');
         Route::get('tickets_closed','getTicketsClosed')->name('tickets_closed');

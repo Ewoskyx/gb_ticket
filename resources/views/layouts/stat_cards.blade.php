@@ -1,59 +1,19 @@
 <div class="cardBox">
-    <a href="{{ route('all_tickets') }}">
-        <div class="card ticket-total">
-            <div>
-                <div class="numbers">{{ $result->count() }}</div>
-                <div class="cardName">Toplam</div>
-            </div>
-            <div class="iconBx">
-                <ion-icon name="ticket-outline"></ion-icon>
-            </div>
-        </div>
-    </a>
-    <a href="{{ route('tickets_pending') }}">
-        <div class="card pend">
-            <div>
-                <div class="numbers">{{ $result->where('status', 'pending')->count() }}</div>
-                <div class="cardName">Bekliyor</div>
-            </div>
-            <div class="iconBx">
-                <ion-icon name="bug-outline"></ion-icon>
-            </div>
-        </div>
-    </a>
-    <a href="{{ route('tickets_in_progress') }}">
-        <div class="card inprog">
-            <div>
-                <div class="numbers">{{ $result->where('status', 'in_progress')->count() }}</div>
-                <div class="cardName">Çalışılıyor</div>
-            </div>
-            <div class="iconBx">
-                <ion-icon name="barbell-outline"></ion-icon>
-            </div>
-        </div>
-    </a>
-    <a href="{{ route('tickets_resolved') }}">
-        <div class="card res">
-            <div>
-                <div class="numbers">{{ $result->where('status', 'resolved')->count() }}</div>
-                <div class="cardName">Çözümlendi</div>
-            </div>
-            <div class="iconBx">
-                <ion-icon name="checkmark-done-outline"></ion-icon>
-            </div>
-        </div>
-    </a>
-    <a href="{{ route('tickets_closed') }}">
-        <div class="card closed">
-            <div>
-                <div class="numbers">{{ $result->where('status', 'closed')->count() }}</div>
-                <div class="cardName">Kapandı</div>
-            </div>
-            <div class="iconBx">
-                <ion-icon name="close-outline"></ion-icon>
-            </div>
-        </div>
-    </a>
+    @card(['type'=>'ticket-total','count' => $result->count(), 'icon' => 'ticket-outline','routeTo'=>'all_tickets'])
+          Toplam      
+    @endcard
+    @card(['type'=>'pend','count' => $result->where('status', 'pending')->count(),'icon' => 'bug-outline','routeTo'=>'tickets_pending'])
+          Bekliyor      
+    @endcard
+    @card(['type'=>'inprog','count' => $result->where('status', 'in_progress')->count(),'icon' => 'barbell-outline','routeTo'=>'tickets_in_progress'])
+          Çalışılıyor      
+    @endcard
+    @card(['type'=>'res','count' => $result->where('status', 'resolved')->count(),'icon' => 'checkmark-done-outline','routeTo'=>'tickets_resolved'])
+          Çözümlendi      
+    @endcard
+    @card(['type'=>'closed','count' => $result->where('status', 'closed')->count(),'icon' => 'close-outline','routeTo'=>'tickets_closed'])
+          Kapandı      
+    @endcard
 </div>
 <div class="chart_box">
     <div id="chartdiv"></div>

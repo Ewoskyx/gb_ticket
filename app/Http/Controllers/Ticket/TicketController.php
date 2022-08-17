@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Ticket;
 use App\Models\Ticket;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\TicketRequest;
 use App\Repositories\Contracts\ITicket;
 
 class TicketController extends Controller
@@ -49,12 +50,26 @@ class TicketController extends Controller
     public function showTicket($id)
     {
         $ticket = $this->tickets->find($id);
-        return view('tickets.show_ticket', ['ticket' => $ticket]);
+        $status = ['closed','pending','resolved','in_progress'];
+        return view('tickets.show_ticket', ['ticket' => $ticket, 'status' => $status]);
     }
 
     public function searchTicket($query = '')
     {   
         $ticket= $this->tickets->searchByName('assignee', $query);
         return view('tickets.search',['ticket'=>$ticket]);
+    }
+
+    public function editTicket(TicketRequest $request, $id) {
+            $this->tickets->update($id, [
+            'category' => $request->category,
+            'title' => $request->title,
+            'description' => $request->description,
+            'severity' => $request->severity,
+            'status' => $request->status,
+            'assignee' => $request->assignee,
+        ]);
+
+        return redirect()->route('all_tickets');
     }
 }
